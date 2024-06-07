@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import { useFonts } from 'expo-font';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -8,7 +8,7 @@ export default function Index() {
     const navigation = useNavigation();
     const [fontsLoaded] = useFonts({
         'Itim': require('../assets/fonts/Itim-Regular.ttf')
-    });    
+    });
     const [fontsLoaded2] = useFonts({
         'Inter': require('../assets/fonts/Inter.ttf')
     });
@@ -22,41 +22,33 @@ export default function Index() {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('../assets/images/FundoLogin.png')} style={styles.container}>
+            <ImageBackground source={require('../assets/images/Login.png')} style={styles.container}>
                 <View style={styles.containerLogo}>
                     <Animatable.Image
-                        source={require('../assets/images/logo.png')}
+                        source={require("../assets/images/logo.png")}
                         style={styles.logo}
-                        resizeMode='contain'
+                        resizeMode="contain"
                     />
 
                 </View>
 
                 <View style={styles.form}>
 
-                    <TouchableOpacity
-                        style={styles.button}>
-                        <Text style={styles.buttonText}>
-                            Criar uma conta
-                        </Text>
-                    </TouchableOpacity>
+                    <View style={styles.input}>
+                        <TextInput
+                            style={styles.inputLogin}
+                            placeholder="Email"
+                        />
+                        <TextInput
+                            style={styles.inputLogin}
+                            placeholder="Senha"
+                        />
 
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('login')}
-                        style={styles.button2}>
-                        <Text style={styles.buttonText2}>
-                            Iniciar Sessão
-                        </Text>
-                    </TouchableOpacity>
+                    </View>
 
-                    <TouchableOpacity
-                        style={styles.button99}>
-                        <View style={styles.textbaixo}>
-                            <Text style={styles.text}>
-                                Continuar como visitante
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+
+
+
 
                 </View>
             </ImageBackground>
@@ -68,6 +60,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FF3838'
+    },
+    inputLogin: {
+        borderWidth: 1,
+        borderRadius: 8,
+        borderColor: '#ccc',
+        padding: 10,
+        marginBottom: 10,
+        width: '70%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        left: 40,
+        height: 70,
+        backgroundColor: '#D9D9D9',
     },
     form: {
         width: '100%',
@@ -84,16 +89,16 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo: {
-        width: '70%'
+        width: "70%"
     },
     title: {
         fontSize: 24,
         marginTop: 20,
         marginBottom: 12,
-        color: '#FFF'
+        color: "#FFF"
     },
     text: {
-        color: 'white',
+        color: 'white'
     },
     button: {
         backgroundColor: '#FE6363',
