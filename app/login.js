@@ -34,7 +34,8 @@ export default function Index() {
 
                 <View style={styles.form}>
 
-                    <View style={styles.input}>
+                    <View style={styles.Login}>
+
                         <TextInput
                             style={styles.inputLogin}
                             placeholder="Email"
@@ -43,16 +44,23 @@ export default function Index() {
                             style={styles.inputLogin}
                             placeholder="Senha"
                         />
-
                     </View>
 
+                    <View style={styles.botaoinicio}>
+                        <TouchableOpacity
 
-
-
+                            style={styles.button2}>
+                            <Text style={styles.buttonText2}>
+                                Iniciar Sessão
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
 
                 </View>
-            </ImageBackground>
-        </View>
+
+
+            </ImageBackground >
+        </View >
     );
 }
 
@@ -61,21 +69,33 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FF3838'
     },
-    inputLogin: {
-        borderWidth: 1,
-        borderRadius: 8,
-        borderColor: '#ccc',
-        padding: 10,
-        marginBottom: 10,
+    botaoinicio:{
+        bottom:50,
+    },
+    Login: {
+        bottom: 50,
         width: '70%',
+    },
+    input: {
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    inputLogin: {
+        height: 62,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: '#ccc',
+        marginBottom: 20,
+        padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        left: 40,
-        height: 70,
-        backgroundColor: '#D9D9D9',
+        backgroundColor: '#EAEAEA',
     },
     form: {
-        width: '100%',
+        flex: 3,
+        justifyContent: 'center',
+        alignItems: 'center'
 
     },
     textbaixo: {
@@ -100,33 +120,19 @@ const styles = StyleSheet.create({
     text: {
         color: 'white'
     },
-    button: {
-        backgroundColor: '#FE6363',
-        borderRadius: 10,
-        paddingVertical: 8,
-        width: '60%',
-        height: 70,
-        alignSelf: 'center',
-        bottom: 70,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-    },
+
     buttonText2: {
-        fontSize: 20,
+        fontSize: 17,
         color: '#FF0000',
     },
     button2: {
         backgroundColor: '#fff',
         borderRadius: 10,
         paddingVertical: 8,
-        width: '60%',
-        height: 70,
+        marginTop: 20,
+        width:150,
+        height: 45,
         alignSelf: 'center',
-        bottom: 50,
         alignItems: 'center',
         justifyContent: 'center',
     },
