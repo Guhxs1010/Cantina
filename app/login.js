@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput, KeyboardAvoidingView } from 'react-native';
 import { useFonts } from 'expo-font';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -21,46 +21,54 @@ export default function Index() {
     }
 
     return (
-        <View style={styles.container}>
-            <ImageBackground source={require('../assets/images/Login.png')} style={styles.container}>
-                <View style={styles.containerLogo}>
-                    <Animatable.Image
-                        source={require("../assets/images/logo.png")}
-                        style={styles.logo}
-                        resizeMode="contain"
-                    />
-
-                </View>
-
-                <View style={styles.form}>
-
-                    <View style={styles.Login}>
-
-                        <TextInput
-                            style={styles.inputLogin}
-                            placeholder="Email"
+        <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
+            <View style={styles.container}>
+                <ImageBackground source={require('../assets/images/Login.png')} style={styles.container}>
+                    <View style={styles.containerLogo}>
+                        <Animatable.Image
+                            source={require("../assets/images/logo.png")}
+                            style={styles.logo}
+                            resizeMode="contain"
                         />
-                        <TextInput
-                            style={styles.inputLogin}
-                            placeholder="Senha"
-                        />
+
                     </View>
 
-                    <View style={styles.botaoinicio}>
-                        <TouchableOpacity
+                    <View style={styles.form}>
 
-                            style={styles.button2}>
-                            <Text style={styles.buttonText2}>
-                                Iniciar Sessão
-                            </Text>
-                        </TouchableOpacity>
+                        <View style={styles.Login}>
+
+                            <TextInput
+                                style={styles.inputLogin}
+                                placeholder="Email"
+                            />
+
+                            <View>
+                                <TextInput
+                                    style={styles.inputLogin}
+                                    placeholder="Senha"
+                                />
+
+                            </View>
+
+                        </View>
+
+                        <View style={styles.botaoinicio}>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('inicial')}
+                                style={styles.button2}>
+                                <Text style={styles.buttonText2}>
+                                    Iniciar Sessão
+                                </Text>
+
+                            </TouchableOpacity>
+                        </View>
+
                     </View>
 
-                </View>
 
-
-            </ImageBackground >
-        </View >
+                </ImageBackground >
+            </View >
+        </KeyboardAvoidingView>
     );
 }
 
@@ -69,11 +77,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FF3838'
     },
-    botaoinicio:{
-        bottom:50,
+    botaoinicio: {
     },
     Login: {
-        bottom: 50,
         width: '70%',
     },
     input: {
@@ -82,19 +88,20 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     inputLogin: {
-        height: 62,
+        height: 50,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: '#ccc',
         marginBottom: 20,
-        padding: 10,
+
+        paddingHorizontal: 10,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#EAEAEA',
+        fontSize: 17,
     },
     form: {
         flex: 3,
-        justifyContent: 'center',
         alignItems: 'center'
 
     },
@@ -129,8 +136,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         paddingVertical: 8,
-        marginTop: 20,
-        width:150,
+        width: 150,
         height: 45,
         alignSelf: 'center',
         alignItems: 'center',

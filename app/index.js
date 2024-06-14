@@ -70,11 +70,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#FF3838'
     },
     form: {
-        width: '100%',
+        flex: 1,
+        alignItems: "center",
+        flexDirection: "column",
 
     },
     textbaixo: {
-        bottom: 35,
         alignItems: 'center',
         textAlign: 'center',
     },
@@ -100,11 +101,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 8,
         width: '60%',
-        height: 70,
+        height: 55,
         alignSelf: 'center',
-        bottom: 70,
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 20,
     },
     buttonText: {
         fontSize: 20,
@@ -116,13 +117,14 @@ const styles = StyleSheet.create({
     },
     button2: {
         backgroundColor: '#fff',
+        width: "60%",
         borderRadius: 10,
         paddingVertical: 8,
-        width: '60%',
-        height: 70,
+        height: 55,
         alignSelf: 'center',
-        bottom: 50,
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 20,
+
     },
 });
