@@ -85,10 +85,10 @@ const styles = StyleSheet.create({
     input: {
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     inputLogin: {
-        height: 50,
+        height: 65,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: '#ccc',
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     },
     containerLogo: {
         flex: 2,
+        top:30,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 8,
         width: 150,
-        height: 45,
+        height: 50,
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
